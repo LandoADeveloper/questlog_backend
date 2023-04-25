@@ -16,6 +16,6 @@ export const verifyJWTCookie = (req, res, next) => {
         next()
     } catch(e){
         console.log(e.message);
-        res.status(404).end()
+        res.status(401).end()
     }
 }
