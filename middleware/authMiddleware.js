@@ -9,7 +9,7 @@ export const encryptPassword = (req, _, next) => {
 }
 
 export const verifyJWTCookie = (req, res, next) => {
-    const token = req.cookie.token
+    const token = req.cookies.token
     try{
         const claim = verifyJWTToken(token)
         req.claim = claim
