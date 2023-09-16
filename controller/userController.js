@@ -26,7 +26,7 @@ export const login = async (req, res) => {
         console.log(response);
         if(response===null) return res.status(401).end()
         const token = createJWTToken({ user: response._id })
-        //console.log(token);
+        // console.log(token);
         res.cookie('token', token,{ httpOnly: true, secure: true, sameSite: 'none' } ) //
         //console.log(res.cookie);
         res.send()
